@@ -1,17 +1,30 @@
-# Paulo Baldessari — web editorial
+# Paulo Baldessari — rediseño React (versión 2)
 
-Landing page responsive en HTML/CSS/JS sin dependencias de compilación.
+Proyecto responsive desarrollado con React 19, JavaScript, Vite, Motion y Lucide Icons. Incluye acordeón animado de servicios, menú móvil, slider de testimonios, animaciones de entrada, CTA a WhatsApp (con ícono SVG real) y visuales reutilizados del sitio oficial.
+
+## Uso local
+
+```bash
+npm install
+npm run dev
+```
 
 ## Publicación
-Subir `index.html`, `styles.css` y `script.js` juntos a un hosting estático o WordPress (integrándolos en un tema/plantilla). El archivo principal es `index.html`.
 
-## Recursos
-Las imágenes reales y el logo son propiedad/recursos publicados en `paulobaldessari.com`; se cargan mediante URLs directas a su instalación de WordPress, sin incluir copias locales. Para producción conviene obtener autorización para alojarlas, optimizarlas y confirmar que esas URLs seguirán disponibles.
+```bash
+npm run build
+```
 
-## Conversión
-Los enlaces de WhatsApp dirigen al número publicado en la web original, con textos precompletados. No hay formularios ni almacenamiento de información de visitantes.
+Subir la carpeta `dist/` a cualquier hosting estático. Para GitHub Pages, se puede publicar `dist/` con GitHub Actions o `gh-pages`. `vite.config.js` usa `base: './'` para funcionar en un subdirectorio.
 
-## Verificaciones editoriales pendientes
-- El sitio original menciona más de 13 países en varios pasajes y más de 18 en otro; esta versión usa 19 nombres únicos bajo el título exacto «Países con los que he trabajado» (incluye Puerto Rico). Venezuela aparece duplicada en la fuente.
-- Revisar vigencia de testimonios, cargos y uso de marcas antes de publicar públicamente.
-- Dos páginas de servicio enlazan a URLs deducidas de sus títulos; verificar su permalink en el sitio fuente antes de lanzamiento.
+## Fotografías / permiso
+
+Las fotografías son URL públicas de `paulobaldessari.com`; NO están incorporadas como archivos en el ZIP. Antes de una publicación definitiva, pedir autorización al titular y alojar copias optimizadas localmente. Si se rompe alguna URL, cambiar el objeto `photos` en `src/main.jsx`.
+
+## Información
+
+Los textos, países, organizaciones y testimonios se conservan de la versión anterior basada en el sitio oficial. No se inventaron logros ni testimonios. `services`, `countries`, `clients` y `quotes` se editan fácilmente en `src/main.jsx`. Revalidar referencias antes del lanzamiento.
+
+## WhatsApp
+
+El número se configura en `WA` al principio de `src/main.jsx`. Confirmar que sigue vigente antes de publicar.
